@@ -12,19 +12,13 @@ describe('contains()', () => {
   });
 
   it('returns true if the target value is among the values of an object', () => {
-    // Your code goes here
-    let obj = {1:1, 2:2, 3:3};
-    expect(_.contains(obj, 2)).toBe(true);
+    // Your code goes here    
+    expect(_.contains({1:"Ben", 2:"Bucca"}, "Ben")).toBe(true);
   });
 
   it('returns false if the target value is not among the values of an object', () => {
-    // Your code goes here
-    let obj = {
-      1: 'foo',
-      2: 'bar',
-      3: 'baz'
-    }; 
-    expect(_.contains(obj, 'quux')).toBe(false);
+    // Your code goes here 
+    expect(_.contains({1:"Ben", 2:"Bucca"}, 'quux')).toBe(false);
   });
 
 });
