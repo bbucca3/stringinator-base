@@ -28,6 +28,7 @@ const indexOf = function(array, target, fromIndex=0) {
 
 const isArrayLike = function(obj) {
   // Your code goes here
+  return obj.hasOwnProperty('length');
 };
 
 // The cornerstone of a functional library -- iterate all elements, pass each to a callback function.
@@ -97,7 +98,7 @@ module.exports = {
   first: first,
   identity: identity,
   indexOf: indexOf,
-  isArrayLike,
+  isArrayLike: isArrayLike,
   last: last,
   map: map,
   pluck: pluck,
