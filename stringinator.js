@@ -8,16 +8,20 @@ const first = function(str, n) {
 
 const last = function(str, n) {
   // Your code goes here
+  const result = _.last(str.split(''), n);
+  return result.length > 1 ? result.join('') : result;
 };
 
 const removeChar = function(str, target) {
   // hint: use _.reject
   // Your code goes here
+  return _.reject(str.split(''), char => char === target).join('');
 };
 
 const hasChar = function(str, target) {
   // hint: use _.some
   // Your code goes here
+  return _.some(str.split(''), char => char === target);
 };
 
 const isOnlyDigits = function(str) {
