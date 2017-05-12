@@ -125,11 +125,22 @@ const filter = function(obj, callback=identity) {
 // Return object without the elements / object valuesthat were rejected by the callback.
 const reject = function(arr, callback=identity) {
   // Your code goes here
+  let result = [];
+  each(arr, element => {
+    if (!callback(element)) {
+      result.push(element);
+    }
+  });
+  return result;
 };
 
 // De-duplicates (de-dups) the elements / object values.
 const uniq = function(obj) {
   // Your code goes here
+  let found = {};
+  return filter(obj, element => {
+    return !(element in found) && (found[element] = true);
+  })
 };
 
 
