@@ -70,6 +70,20 @@ const pluck = function(obj, key) {
 // (accumulator, value, index|key, collection).
 const reduce = function(obj, callback=identity, initialValue) {
   // Your code goes here
+  let accum = initialValue;
+  let initialize = false
+  if (!initialValue) {
+    initialize = true;
+  }
+  each(obj, function(element, index, obj){
+    if (initialize) {
+      accum = element;
+      initialize = false;
+    } else {
+      accum = callback(accum, element, index, obj);
+    }
+  });
+  return accum;
 };
 
 // Return true if the object contains the target.
